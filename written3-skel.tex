@@ -1,0 +1,213 @@
+%-*- Mode:LaTeX; -*-      
+\documentclass[11pt]{article}
+\usepackage{vmargin}		% Force narrower margins
+\setpapersize{USletter}
+\setmarginsrb{1.0in}{1.0in}{1.0in}{0.6in}{0pt}{0pt}{0pt}{0.4in}
+\setlength{\parskip}{.1in}  % removed space between paragraphs
+\setlength{\parindent}{0in}
+
+\usepackage{epsfig}
+\usepackage{graphicx}
+
+\newcommand{\ra}{$\rightarrow$}
+\begin{document}
+
+\large
+\begin{center}
+{\bf CS-6340, Written Assignment \#3} \\
+{\bf Aishwarya Asesh (u1063384)}
+\end{center}
+\normalsize
+{\bf Question 1}
+\begin{enumerate}
+
+\item {\bf AGENT - John} cleared {\bf THEME - the sidewalk} with his {\bf INSTRUMENT - snow shovel}. 
+
+\item {\bf THEME - A raffle} was held for {\bf BENEFICIARY - the local charity.} 
+
+\item {\bf AGENT - Joe} teamed up with {\bf CO-AGENT - Susan} to learn how to {\bf THEME - ski.} 
+
+\item  {\bf RECIPIENT - Tom} was given {\bf THEME - a bike.} 
+
+\item {\bf THEME - The dress} was purchased by {\bf AGENT - Lisa} with {\bf CO-THEME - matching shoes.} 
+
+\item {\bf AGENT - Julie} mailed her {\bf RECIPIENT - grandmother} {\bf THEME - a letter.} 
+
+\item {\bf EXPERIENCER - George} hopes that {\bf THEME - his car} can be fixed.
+
+\item {\bf THEME - The image} was created with {\bf INSTRUMENT - Adobe Photoshop} by {\bf AGENT - a cartoonist.}
+
+\newpage
+{\bf Question 2}
+\begin{quote}
+\hspace*{.5in} $word1$ : $<$9 2 8 0$>$ \\
+\hspace*{.5in} $word2$ : $<$6 7 4 5$>$  \\
+\hspace*{.5in} $word3$ : $<$1 3 9 2$>$ 
+\end{quote}
+
+\begin{enumerate}
+
+
+\item Similarity($word1$, $word2$) using Manhattan Distance.  \\ 
+
+We know Manhattan Distance = $(\vec {X}, \vec {Y})$ = $\sum ^{N}_{i=1} |x_{i} - y_{i} |$\\
+Thus here Manhattan Distance = $|(9-6)| + |(2-7)| + |(8-4)| + |(0-5)|$\\
+= 3 + 5 + 4 + 5\\
+= 17\\
+
+
+\item Similarity($word2$, $word3$) using Manhattan Distance.  \\ 
+
+We know Manhattan Distance = $(\vec {X}, \vec {Y})$ = $\sum ^{N}_{i=1} |x_{i} - y_{i} |$\\
+Thus here Manhattan Distance = $|(6-1)| + |(7-3)| + |(4-9)| + |(5-2)|$\\
+= 5 + 4 + 5 + 3\\
+= 17\\
+
+
+\item Similarity($word1$, $word2$) using Jaccard Similarity.  \\
+
+We know Jaccard $(\vec {X}, \vec {Y})$ = $\frac { \sum^{N}_{i=1} \min (x_{i},y_{i})} { \sum^{N}_{i=1} \max (x_{i},y_{i})}$\\
+Thus here Jaccard = 6 + 2 + 4 + 0 / 9 + 7 + 8 + 5\\
+= 12 / 29\\
+
+\item Similarity($word2$, $word3$) using Jaccard Similarity.  \\
+
+We know Jaccard $(\vec {X}, \vec {Y})$ = $\frac { \sum^{N}_{i=1} \min (x_{i},y_{i})} { \sum^{N}_{i=1} \max (x_{i},y_{i})}$\\
+Thus here Jaccard = 1 + 3 + 4 + 2 / 6 + 7 + 9 + 5\\
+= 10 / 27\\
+
+\item Similarity($word1$, $word2$) using Cosine Similarity.  \\ 
+
+We know Cosine $(\vec {X}, \vec {Y})$ = $\frac { \sum^{N}_{i=1} (x_{i}*y_{i})} {\sqrt {\sum^{N}_{i=1} x_{i}^{2}} \sqrt {\sum^{N}_{i=1} y_{i}^{2}}}$\\
+Thus here Cosine = (9*6 + 2*7 + 8*4 + 0*5) / $(\sqrt {9^{2} + 2^{2} + 8^{2} + 0^{2}} * \sqrt {6^{2} + 7^{2} + 4^{2} + 5^{2}})$\\
+= (100) / (12.20)*(11.22)\\
+= (100) / (136.88)\\
+
+
+\item Similarity($word2$, $word3$) using Cosine Similarity.  \\ 
+
+We know Cosine $(\vec {X}, \vec {Y})$ = $\frac { \sum^{N}_{i=1} (x_{i}*y_{i})} {\sqrt {\sum^{N}_{i=1} x_{i}^{2}} \sqrt {\sum^{N}_{i=1} y_{i}^{2}}}$\\
+Thus here Cosine = (6*1 + 7*3 + 4*9 + 5*2) / $(\sqrt {6^{2} + 7^{2} + 4^{2} + 5^{2}} * \sqrt {1^{2} + 3^{2} + 9^{2} +2^{2}})$\\
+= (73) / (11.22)*(9.74)\\
+= (73) / (109.28)\\
+
+
+\end{enumerate}
+
+
+\newpage
+{\bf Question 3}
+\begin{center}
+\begin{tabular}{|lll|} \hline
+\textbf{NP}  & \textbf{CONTEXT} & \textbf{CLASS} \\ \hline
+Apple tablet          & mobile computer & {\sc product} \\
+British tablet        & computer tech & {\sc product} \\
+Microsoft tablet      & mobile computer  & {\sc product} \\
+Apple                 & tech giant  & {\sc company} \\
+Apple Corporation     & tech leader  & {\sc company} \\
+Microsoft             &  leader & {\sc company} \\
+Microsoft Corporation & tech giant  & {\sc company} \\
+British Tablet Corporation & mobile computer giant & {\sc company} \\ \hline
+\end{tabular}
+\end{center}
+
+For Part A:\\
+Rules generated from NP present in the table above:\\
+
+{\bf Noun Phrase} - If contains (Apple), P (product) is 1/3, P (company) is 2/3\\  
+{\bf Noun Phrase} - If contains (British), P (product) is 1/2, P (company) is 1/2\\
+{\bf Noun Phrase} - If contains (Corporation), P (product) is 0/3, P (company) is 3/3\\
+{\bf Noun Phrase} - If contains (Microsoft), P (product) is 1/3, P (company) is 2/3\\
+{\bf Noun Phrase} - If contains (Tablet), P (product) is 3/4, P (company) is 1/4\\
+
+For Part B:\\
+Rules generated for each contexts present in the table above:\\
+
+{\bf Context} - If contains (computer), P (product) is 3/4, P (company) is 1/4\\  
+{\bf Context} - If contains (giant), P (product) is 0/3, P (company) is 3/3\\
+{\bf Context} - If contains (leader), P (product) is 0/2, P (company) is 2/2\\
+{\bf Context} - If contains (mobile), P (product) is 2/3, P (company) is 1/3\\
+{\bf Context} - If contains (tech), P (product) is 1/4, P (company) is 3/4\\
+
+
+\newpage
+{\bf Question 4}\\[15pt]
+{\bf S1:} Trout can be found in many Utah rivers.  \\
+{\bf S2:} The Utah Symphony hired a new bass player.  \\
+{\bf S3:} John Smith plays an electric bass guitar.  \\
+{\bf S4:} A soprano and bass will sing with the symphony. \\
+{\bf S5:} Ray Charles is learning to play the electric bass guitar. \\
+{\bf S6:} The Utah aquarium displays an electric eel, bass, and guitar fish. \\
+{\bf S7:} The Utah fisherman caught a river trout. \\
+
+We know Salience (word, category) =$\frac{P (word/category)}{P (word)}$, So we will be using this for following proofs:\\
+
+\begin{enumerate}
+\item salience(Utah, {\sc fish}) \\
+P (Utah/fish) = (S1) (S6) (S7) / (S1) (S6) (S7) (S2) = 3/4 \\
+P (Utah) = (S1) (S6) (S7) (S2)/60 = 4/60\\
+P (Utah/fish)/ P (Utah) = (3/4) / (4/60) = 45/4 \\
+
+\item salience(electric, {\sc fish})  \\ 
+P (electric/fish) = (S6) (S5) / (S1) (S5) (S6) (S7) = 2/4 \\
+P (electric) = (S3) (S6) (S5)/60 = 3/60\\
+P (electric/fish)/ P (electric) = (2/4) / (3/60) = 10\\
+
+
+\item salience(bass, {\sc fish})  \\ 
+P (bass/fish) = (S6) (S5) / (S1) (S5) (S6) (S7) = 2/4 \\
+P (bass) = (S2) (S3) (S4) (S5) (S6)/60 = 5/60 \\
+P (bass/fish)/ P (bass) = (2/4) / (5/60) = 6\\
+
+\item salience(Utah, {\sc music}) \\
+P (Utah/music) = (S6) (S2) / (S2) (S3) (S4) (S6) (S5) = 2/5\\
+P (Utah) = (S2) (S1) (S6) (S7)/60 = 4/60 \\
+P (Utah/music)/ P (Utah) = (2/5) / (4/60) = 6\\ 
+
+ \item salience(electric, {\sc music}) \\
+P (electric/music) = (S3) (S6) (S5) / (S2) (S3) (S4) (S6) (S5) = 3/5\\
+P (electric) = (S3) (S6) (S5)/60 = 3/60\\
+P (electric/music)/ P (electric) = (3/5) / (3/60) = 12\\
+
+
+ \item salience(bass, {\sc music}) \\
+P (bass/music) =(S2) (S3) (S4) (S6) (S5) / (S2) (S3) (S6) (S5) (S4) = 5/5 \\
+P (bass) = (S2) (S3) (S6) (S5) (S4)/60 = 5/60\\
+P (bass/music)/ P (bass) = (5/5) / (5/60) = 12\\
+
+\end{enumerate}
+
+
+\newpage
+{\bf Question 5}
+\begin{enumerate}
+\item List all possible  noun phrase (NP) antecedents for the first instance
+  of ``He'' (underlined)  that satisfy gender  agreement.  \\ 
+John Smith, John
+
+\item List all possible  noun phrase (NP) antecedents for ``them'' (underlined) that
+  satisfy \\ animacy  agreement.   \\ 
+INANIMATE - groceries, oranges
+
+\item List all possible  noun phrase (NP) antecedents for ``them'' (underlined) that satisfy \\ number   agreement.  \\ 
+too many groceries, 10 oranges
+
+\item List all of the reflexive pronouns in the story.  \\ 
+himself
+
+\item List all of the possessive pronouns in the story. \\
+his, his, their, her
+
+\item List all of the pleonastic pronouns in the story.  \\ 
+it
+
+\item List all instances of appositives in the story. \\
+Mary, his neighbor, \\her husband, George, who was in the next aisle
+ 
+\end{enumerate}
+
+\end{enumerate}  
+
+
+\end{document}
+
